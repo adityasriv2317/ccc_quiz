@@ -1,0 +1,6 @@
+{
+  "quizKey": "quiz1",
+  "adminID": "testAdmin",
+  "players": ["Akash", "Saurabh", "Rohani", "Vishal", "Aniket"],
+  "status": true
+}

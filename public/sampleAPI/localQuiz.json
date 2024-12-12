@@ -1,0 +1,20 @@
+{
+    "quizzes": [
+      {
+        "quizKey": "quiz1",
+        "title": "CCC Quiz",
+        "category": "Coding"
+      },
+      {
+        "quizKey": "quiz2",
+        "title": "Hacklog in CS",
+        "category": "Reasoning"
+      },
+      {
+        "quizKey": "quiz3",
+        "title": "Career Mathlog",
+        "category": "Aptitude"
+      }
+    ]
+  }
+  

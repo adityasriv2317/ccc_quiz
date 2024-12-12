@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from "react";
+
+// components
+import LandingPage from "./comps/LandingPage";
+import QuizRoom from "./comps/QuizRoom";
+import LocalQuizzes from "./comps/LocalQuizzes";
+import Result from "./comps/Result";
+
+// admin comps
+import AdminRoutes from "./comps/admin/AdminRoutes";
+import CreateQuiz from "./comps/admin/CreateQuiz";
+import QuizControl from "./comps/admin/QuizControl";
+import Register from "./comps/admin/Register";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/room/:quizType/:roomCode/:username/:title" element={<QuizRoom />} />
+        <Route path="/local-quiz" element={<LocalQuizzes />} />
+        <Route path="/results/:scor/:correctAns/:streak/:incorrectAns/:username/:roomCode" element={<Result/>} />
+
+        {/* admin */}
+        <Route path="/admin/create" element={<CreateQuiz />} />
+        <Route path="/admin" element={<AdminRoutes />} />
+        <Route path="/admin/register" element={<Register />} />
+        <Route path="/admin/quiz-control" element={<QuizControl />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
