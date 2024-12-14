@@ -1,5 +1,11 @@
 # React + Vite
 
+- Main branch currently contatin code for quizSutra the previous project which is in working condition.
+- Created a 'new' branch that has a new header section that is following the new design scheme and also codes for secure config
+
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
